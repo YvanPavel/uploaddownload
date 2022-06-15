@@ -1,0 +1,18 @@
+﻿@model List<FileStore>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Home" asp-action="Upload" method="post" enctype="multipart/form-data" data-ajax="true" data-ajax-update="#uploadList">
+    <label for="file"><b>Datei auswählen:</b></label><br />    
+    <input type="file" id="dieDatei" name="dieDatei" /><br /><br />
+    <input type="submit" value="Hochladen" />
+</form>
+
+<div id="uploadList"></div>
+
+<br />
+<br />
+
+<partial name="_PartialView" />

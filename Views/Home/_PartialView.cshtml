@@ -1,0 +1,19 @@
+﻿<table id="uploadList" border="1">
+	<tr>
+		<th>Filename</th>
+		<th>Content Type</th>
+		<th>Conten Length</th>
+		<th>Download Option</th>
+	</tr>
+@foreach (var item in Model)
+{
+	<tr>
+		<td id="test">@item.FileName</td>
+		<td>@item.ContentType</td>
+		<td>@item.ContentLength</td>
+		<td>
+			<a asp-action="Download" asp-route-filename="@item.FileName" asp-route-contenttype="@item.ContentType" >Herunterladen</a>
+		</td>
+	</tr>
+}
+</table>
